@@ -45,7 +45,7 @@ def get_vulnerabilities():
         conditions.append("CVE_ID = %s")
         params.append(cve_id)
     if product_id:
-        conditions.append("PRODUCT = %s")
+        conditions.append("PRODUCT_ID = %s")
         params.append(product_id)
 
     if conditions:
