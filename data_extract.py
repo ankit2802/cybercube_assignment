@@ -208,11 +208,6 @@ df_cve_changes = pd.DataFrame(cve_change_data)
 for col in ['CVSS_BASE_SCORE', 'EXPLOITABILITY_SCORE', 'IMPACT_SCORE']:
     df_vulnerabilities[col] = df_vulnerabilities[col].replace('', None)
 
-# Save the DataFrames to CSV files
-df_vulnerabilities.to_csv('C:\\Users\\ankit\\Desktop\\vulnerabilities_2024.csv', index=False)
-df_cve_changes.to_csv('C:\\Users\\ankit\\Desktop\\cve_changes_2024.csv', index=False)
-print("Data saved to vulnerabilities_2024.csv and cve_changes_2024.csv")
-
 # Define the connection parameters
 user = 'root'
 password = 'admin'
