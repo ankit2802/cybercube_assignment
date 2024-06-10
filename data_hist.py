@@ -11,18 +11,6 @@ mysql_database = 'cybercube'
 conn = mysql.connector.connect(host=mysql_host, user=mysql_user, password=mysql_password, database=mysql_database)
 cursor = conn.cursor()
 
-# Function to check if a CVE_ID exists in a table
-def cve_id_exists(table_name, cve_id):
-    query = f"SELECT COUNT(*) FROM {table_name} WHERE CVE_ID = %s"
-    cursor.execute(query, (cve_id,))
-    return cursor.fetchone()[0] > 0
-
-# Function to fetch the existing record by CVE_ID and CREATED_DATE
-def fetch_existing_record_by_cve_and_date(table_name, cve_id, created_date):
-    query = f"SELECT * FROM {table_name} WHERE CVE_ID = %s AND CREATED_DATE = %s"
-    cursor.execute(query, (cve_id, created_date))
-    return cursor.fetchone()
-
 # Function to fetch the existing CVE_IDs and CREATED_DATEs
 def fetch_existing_cve_ids_and_dates(table_name):
     query = f"SELECT cve_id,cve_change_id FROM {table_name}"
