@@ -12,7 +12,7 @@ history_api_url_template = "https://services.nvd.nist.gov/rest/json/cvehistory/2
 
 # Define the date range
 end_date = datetime(2024, 5, 1)
-start_date = datetime(2024, 1, 1)
+start_date = datetime(1985, 1, 1)
 max_days = 120
 
 # Initialize lists to store all vulnerabilities and CVE history changes
